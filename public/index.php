@@ -31,6 +31,7 @@
               if($str["hash_pass"]==$hash_pass){
                   setcookie("user",$hash_user,time()+2592000);
                   setcookie("pass",$hash_pass,time()+2592000);
+				  echo file_get_contents("../templates/index_body_loggedin.tpl");
               }
               elseif(!isset($str["hash_pass"])){
                   include '../functions/post.php';
@@ -75,6 +76,10 @@
  							 '邮件发送失败',
  							 'error'
 						  )</script>";
+				  $query="INSERT INTO USER_DATA(USER_PASS,USER_ID,EMAIL)VALUES('"$passwd"','"$hash_user"','"$user"')";
+				  $connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS) or die('数据库连接失败，错误信息：'.mysqli_error($connect));	//数据库连接
+				  mysqli_select_db($connect,DB_NAME) or die('数据库连接错误，错误信息：'.mysqli_error($connect));		//选择库
+				  mysqli_query($connect,$query);
               }
           }
           elseif(isset($_COOKIE["user"])&&isset($_COOKIE["pass"])){
@@ -90,7 +95,7 @@
                       );
               }
               if($str["hash_pass"]==$hash_pass){
-                  echo file_get_contents("../templates/indexbody__loggedin.tpl");
+                  echo file_get_contents("../templates/index_body_loggedin.tpl");
               }
               else{
                 echo "<body>";

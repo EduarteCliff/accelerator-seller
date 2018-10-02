@@ -47,7 +47,7 @@
 			include "config.php";
 			$conn=mysqli_connect(DB_HOST, DB_USER,DB_PASS) or die("Error-数据库连接失败！");
 			$connection=mysqli_select_db($conn,DB_NAME) or die("Error-数据库选择失败！");
-			$query="CREATE TABLE `speed_up_tk`.`USER_DATA` ( `USER_PASS` TEXT NOT NULL , `USER_ID` TEXT NOT NULL ) ENGINE = InnoDB;";
+			$query="CREATE TABLE `".DB_NAME."`.`USER_DATA` ( `USER_PASS` TEXT NOT NULL , `USER_ID` TEXT NOT NULL , `EMAIL` TEXT NOT NULL ) ENGINE = InnoDB;";
 			mysqli_query($conn,$query) or die("新增错误");
 			fopen("install_lock", "w");
 			header('location:/install_finish.php');
