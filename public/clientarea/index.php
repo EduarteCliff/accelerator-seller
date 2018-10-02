@@ -14,7 +14,13 @@
 					  }
     	if($hash_pass!=$str["hash_pass"]) header("location:/clientarea/login.php");
       	elseif(!isset($_GET["q"])){
-          echo file_get_contents("../../templates/clientarea_main.tpl");
+        	echo file_get_contents("../../templates/clientarea_main.tpl");
         }
+	elseif($_GET["q"]=="info"){
+		echo file_get_contents("../../templates/clientarea_main.tpl");
+	}
+	elseif($_GET["q"]=="charge"){
+		echo file_get_contents("../../templates/clientarea_charge.tpl");
+	}
     }else header("location:/clientarea/login.php");
 ?>
