@@ -1,5 +1,5 @@
 <?php
-	if(($_GET["submit"])=="前往主页") header('location:/');
+	if(isset($_GET["submit"])) header('location:/');
 	include "../functions/ismobile.php";
 	if(isMobile()) die("<body>暂不支持手机浏览器<br>实在太忙了没时间做<br>如果你可以帮忙开发手机前端，可以联系qq207083702</body></html>");
 	echo file_get_contents("../templates/index_head.tpl");
@@ -21,7 +21,7 @@
 		$passwd=$_POST["passwd"];
 		$hash_pass=md5($passwd);
 		$hash_user=md5($user);
-		if($user!=""){
+		if(isset($user)){
 			$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS) or die('数据库连接失败，错误信息：'.mysqli_error($connect));
 			//数据库连接
 			mysqli_select_db($connect,DB_NAME) or die('数据库连接错误，错误信息：'.mysqli_error($connect));
