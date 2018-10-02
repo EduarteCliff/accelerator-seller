@@ -1,4 +1,3 @@
-<body>
 	<div class="outer-container">
     	<div class="inner-container">
     	<div id="container">
