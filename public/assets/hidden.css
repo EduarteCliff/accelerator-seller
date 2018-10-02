@@ -1,0 +1,15 @@
+.outer-container{
+	width: 1290px;
+	height: 1124px;
+	position: relative;
+	overflow: hidden;
+}
+.inner-container{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: -17px;
+	bottom: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}

@@ -1,0 +1,126 @@
+body {
+  background: #111;
+  color: #555;
+  font-family: monospace;
+  font-size: 18px;
+  margin: 0; }
+
+img {
+  display: block;
+  width: 100%; }
+
+input[type=checkbox] {
+  display: none; }
+
+label {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 1em;
+  padding: 0.4em 0; }
+
+input[type=checkbox] + label:before {
+  background: #555;
+  content: '';
+  display: inline-block;
+  height: 16px;
+  margin-right: 8px;
+  position: relative;
+  top: 1px;
+  width: 16px; }
+
+input[type=checkbox]:checked + label:before {
+  background: #00ffaa; }
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 10px;
+  position: relative; }
+
+.container--offset {
+  margin-left: 0; }
+
+button {
+  background: #555;
+  border: 10px solid #00ffaa;
+  cursor: pointer;
+  display: block;
+  font-family: monospace;
+  font-size: 24px;
+  height: 80px;
+  line-height: 60px;
+  margin: 0;
+  outline: none;
+  padding: 0 1.2em;
+  text-align: right; }
+  button:hover {
+    background: #00ffaa; }
+  button#deleteme {
+    margin: 2rem; }
+
+.scene {
+  margin: 0;
+  padding: 0;}
+  .scene button {
+    left: 10%;
+    top: 260px;
+    width: 80%;
+    position: absolute; }
+
+.fill {
+  bottom: 5%;
+  left: 5%;
+  position: absolute;
+  right: 5%;
+  top: 5%; }
+
+.expand-width {
+  width: 100%; }
+
+.border {
+  border: 2px dashed #00ffaa; }
+
+.aspect {
+  opacity: 0.2; }
+
+.scene > *:nth-child(1) {
+  opacity: 0.15; }
+  .scene > *:nth-child(1) button {
+    -webkit-transform: rotate(150deg);
+        -ms-transform: rotate(150deg);
+            transform: rotate(150deg); }
+
+.scene > *:nth-child(2) {
+  opacity: 0.3; }
+  .scene > *:nth-child(2) button {
+    -webkit-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+            transform: rotate(120deg); }
+
+.scene > *:nth-child(3) {
+  opacity: 0.45; }
+  .scene > *:nth-child(3) button {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg); }
+
+.scene > *:nth-child(4) {
+  opacity: 0.6; }
+  .scene > *:nth-child(4) button {
+    -webkit-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+            transform: rotate(60deg); }
+
+.scene > *:nth-child(5) {
+  opacity: 0.75; }
+  .scene > *:nth-child(5) button {
+    -webkit-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+            transform: rotate(30deg); }
+
+.scene > *:nth-child(6) {
+  opacity: 0.9; }
+  .scene > *:nth-child(6) button {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg); }
