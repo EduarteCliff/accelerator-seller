@@ -8,7 +8,7 @@
 	</div>
 	</div>
 	</div>
-    	<script src="./js/parallax.js"></script>
+    	<script src="./js/parallax.min.js"></script>
 	<script>
 	var scene = document.getElementById('scene');
 	var parallax = new Parallax(scene);
