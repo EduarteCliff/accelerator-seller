@@ -1,5 +1,4 @@
 <?php
-	echo "helloworld!";
 	include '../config/config.php';
 	if(isset($_COOKIE["user"])){
 					  $hash_user=$_COOKIE["user"];
@@ -14,9 +13,8 @@
 							  );
 					  }
     	if($hash_pass!=$str["hash_pass"]) header("location:/clientarea/login.php");
-      	else{
-          echo "<br>";
-          echo "loggedin";
+      	elseif(!isset($_GET["q"])){
+          echo file_get_contents("../../templates/clientarea_main.tpl");
         }
     }else header("location:/clientarea/login.php");
 ?>
