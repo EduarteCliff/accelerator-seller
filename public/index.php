@@ -33,6 +33,20 @@
                   setcookie("pass",$hash_pass,time()+2592000);
               }
               elseif(!isset($str["hash_pass"])){
+                  include '../functions/post.php';
+                  $chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LeK-3IUAAAAABRzTjaawbvdZVdcbBSKzZthftES&response=".$_POST["g-recaptcha-response"]);
+                  $chaptcha=json_decode($chaptcha,true);
+                  if(!$chaptcha["success"]){
+                    echo "<body>";
+                    echo "<link rel='stylesheet' href='./css/sweetalert2.min.css'>";
+                  	echo "<script>sweetAlert(
+ 							 '出错了...',
+ 							 '你没有点击验证码哦',
+ 							 'error'
+						  )</script>";
+                    echo file_get_contents("../templates/index_body.tpl");
+                    die("");
+                  }
                   echo file_get_contents("../templates/index_body.tpl");
                   require_once("../phpmailer/class.phpmailer.php");
 				  require_once("../phpmailer/class.smtp.php");
@@ -51,10 +65,16 @@
                   $mail->addAddress($user,'USER');
                   $mail->Subject = '欢迎注册'.SITE_NAME;
                   $body=file_get_contents("../templates/mail_reg.tpl");
-                  $body=str_replace("$!PASSWORD!$",$pass,$body);
+                  $body=str_replace("$!PASSWORD!$",$passwd,$body);
                   $body=str_replace("$!HTTP-REQUEST!$",$hash_user,$body);
                   $mail->Body = $body;
                   $status = $mail->send();
+                  if($status) echo "<script>sweetAlert('干得漂亮！', '注册邮件已发送，请查收！','success')</script>";
+                  else echo "<script>sweetAlert(
+ 							 '出错了...',
+ 							 '邮件发送失败',
+ 							 'error'
+						  )</script>";
               }
           }
           elseif(isset($_COOKIE["user"])&&isset($_COOKIE["pass"])){
@@ -73,10 +93,12 @@
                   echo file_get_contents("../templates/indexbody__loggedin.tpl");
               }
               else{
+                echo "<body>";
                 echo file_get_contents("../templates/index_body.tpl");
               }
           }
           else{
+            echo "<body>";
             echo file_get_contents("../templates/index_body.tpl");
           }
         }

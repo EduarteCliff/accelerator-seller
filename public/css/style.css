@@ -32,7 +32,7 @@ Form
 -------------------------------- */
 .cd-form {
   width: 100%;
-  max-width: 100%;
+  max-width: 80%;
   height: 100px;
   margin: 0 auto;
 
@@ -78,7 +78,8 @@ Form
 .cd-form select,
 .cd-form legend {
   display: inline;
-  width: 100%;
+  /*在这里*/
+  width: 90%;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;

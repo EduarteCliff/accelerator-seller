@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>��ӭע�ᣡ</title>
+		<title>欢迎注册！</title>
         
     <style type="text/css">
 		p{
@@ -514,7 +514,7 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
                         
-                            <h1>��ӭע�ᣡ</h1>
+                            <h1>欢迎注册！</h1>
 
                         </td>
                     </tr>
@@ -566,9 +566,9 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
                         
-                            <h3>��ӭ��Ϊ���ǵ�һԱ</h3>
+                            <h3>欢迎成为我们的一员</h3>
 
-<p>���ڣ����μ��������룺</p>
+<p>现在，请牢记您的密码：</p>
 
                         </td>
                     </tr>
@@ -634,7 +634,7 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
                         
-                            ���ڵ������İ�ť����������м���������������ע��<br>
+                            现在点击下面的按钮，在输入框中键入你的密码以完成注册<br>
 <br>
 <strong>Fly Safe!</strong>
                         </td>
@@ -659,7 +659,7 @@
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Helvetica; font-size: 18px; padding: 18px;">
-                                <a class="mcnButton " title="��֤ע��" href="https://www.speed-up.tk/reg_confirm?req=$!HTTP-REQUEST!$" target="_blank" style="font-weight: bold;letter-spacing: -0.5px;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">��֤ע��</a>
+                                <a class="mcnButton " title="验证注册" href="https://www.speed-up.tk/reg_confirm?req=$!HTTP-REQUEST!$" target="_blank" style="font-weight: bold;letter-spacing: -0.5px;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">验证注册</a>
                             </td>
                         </tr>
                     </tbody>
