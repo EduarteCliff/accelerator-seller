@@ -51,8 +51,8 @@
 				echo "<body>";
               	echo "<script>sweetAlert('干得漂亮！', '登录成功！','success')</script>";
 				echo file_get_contents("../templates/index_body_loggedin.tpl");
-				setcookie("user",$hash_user,time()+2592000);
-				setcookie("pass",$hash_pass,time()+2592000);
+				setcookie("user",$hash_user,time()+2592000,"/");
+				setcookie("pass",$hash_pass,time()+2592000,"/");
 			} elseif(!isset($str["hash_pass"])){
 				include '../functions/post.php';
 				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LeK-3IUAAAAABRzTjaawbvdZVdcbBSKzZthftES&response=".$_POST["g-recaptcha-response"]);
