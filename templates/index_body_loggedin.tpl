@@ -14,7 +14,7 @@
 	var parallax = new Parallax(scene);
 	</script>
 <div class="footer">
-	<form method="POST" action="clientarea.php" class="cd-form floating-labels">
+	<form method="POST" action="/clientarea" class="cd-form floating-labels">
 	<input type="submit" class="btn btn-default" value="进入客户中心" style="display:inline; margin-top: 12px; margin-bottom:-5px;margin-left= -40px">
 	</form>
 </div>
