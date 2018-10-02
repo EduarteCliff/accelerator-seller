@@ -13,8 +13,8 @@
     <div class="pure-menu custom-restricted-width" style="width=30%">
       <ul class="pure-menu-list" style="margin-left: 1%;">
 	      <li class="pure-menu-item pure-menu-selected"><a href="/clientarea/logout.php" class="pure-menu-link">登出</a></li>
-	      <li class="pure-menu-item"><a href="/clientarea/?q=info" class="pure-menu-link">统计</a></li>
-	      <li class="pure-menu-item"><a href="/clientarea/?q=charge" class="pure-menu-link">查看配置</a></li>
+	      <li class="pure-menu-item"><a href="/clientarea/?q=analyze" class="pure-menu-link">统计</a></li>
+	      <li class="pure-menu-item"><a href="/clientarea/?q=info" class="pure-menu-link">查看配置</a></li>
       </ul>
     </div><br>
     <table class="pure-table" style="margin-left: 2%;">
