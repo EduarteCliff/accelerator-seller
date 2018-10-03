@@ -16,11 +16,14 @@
       	elseif(!isset($_GET["q"])){
         	echo file_get_contents("../../templates/clientarea_main.tpl");
         }
-	elseif($_GET["q"]=="info"){
+	elseif($_GET["q"]=="analyze"){
 		echo file_get_contents("../../templates/clientarea_main.tpl");
 	}
 	elseif($_GET["q"]=="charge"){
 		echo file_get_contents("../../templates/clientarea_charge.tpl");
+	}
+	elseif($_GET["q"]=="info"){
+		echo file_get_contents("../../templates/clientarea_info.tpl");
 	}
     }else header("location:/clientarea/login.php");
 ?>
