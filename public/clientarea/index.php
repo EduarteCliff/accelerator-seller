@@ -24,7 +24,7 @@
                     'TIME' => $row["TIME"]
                             );
             }
-            $html=str_replace("%!time!%",$str["TIME"]/60,$html);
+            $html=str_replace("%!time!%",round($str["TIME"]/60,2),$html);
             echo $html;
         }
 	elseif($_GET["q"]=="analyze"){
@@ -38,7 +38,7 @@
 				'TIME' => $row["TIME"]
 						);
 		}
-		$html=str_replace("%!time!%",$str["TIME"]/60,$html);
+		$html=str_replace("%!time!%",round($str["TIME"]/60,2),$html);
       	echo $html;
 	}
 	elseif($_GET["q"]=="charge"){

@@ -10,7 +10,9 @@
 	<link rel='stylesheet' id='install-css'  href='./install/install.min.css' type='text/css' media='all' />
 </head>
 <?php
-	echo file_get_contents('./install/finish.tpl');
+	$html=file_get_contents('./install/finish.tpl');
+	$html=str_replace("%!DIR!%",dirname(dirname(__FILE__)),$html);
+	echo $html;
 	unlink("./install/finish.tpl");
 	unlink("./install/install.php");
 	unlink("./install/buttons.min.css");
