@@ -4,6 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src='https://www.recaptcha.net/recaptcha/api.js'></script>
 	<script src="js/modernizr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.21.1/sweetalert2.all.min.js"></script>
 	<meta charset="utf-8">
@@ -11,6 +12,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="css/bs.min.css">
 	<style>html { overflow: hidden; }</style>
+	<script>
+       function onSubmit(token) {
+         document.getElementById("rgform").submit();
+       }
+    </script>
 	<style>
 	img{
 		width: 120%;
