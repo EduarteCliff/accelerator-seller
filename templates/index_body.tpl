@@ -14,18 +14,17 @@
 	var parallax = new Parallax(scene);
 	</script>
 <div class="footer">
-	<form method="POST" class="cd-form floating-labels">
-			<div style="float: left; margin-left: 1%; width:37%;margin-bottom:-5px;">
-				<label class="cd-label" for="cd-email" style="width: 200%">邮箱</label>
-				<input type="email" class="cd-email" id="cd-email" name="email">
+	<center><form method="POST">
+			<div style="float: left;margin-left:4.5%;width:39%;margin-top:1%;margin-bottom:1%;">
+				<input type="email" class="form-control" id="cd-email" name="email" placeholder="邮箱">
 			</div>
-			<div style="float: left; margin-left:-40px; width:37%;">
-				<label class="cd-label" for="cd-company">密码</label>
-				<input type="password" class="cd-company" id="cd-company" name="passwd">
-			</div><div class="g-recaptcha" data-theme="dark " data-sitekey="6LeK-3IUAAAAAMKVQi8eym1MHjrtGAnQpBNPQDXp" style="float: left;margin-top: -4px; margin-left:-40px;margin-bottom:-5px;"></div>
-          	<br>
-			<input type="submit" class="btn btn-default" value="登陆/注册" style="display:inline; margin-top: 12px; margin-bottom:-5px;margin-left= -40px">
-	</form>
+			<div style="float: left;margin-left:1.5%;width:39%;margin-top:1%;margin-bottom:1%;">
+				<input type="password" class="form-control" id="cd-company" name="passwd" placeholder="密码">
+			</div><!--<br>-->
+			<div style="float: left;margin-left:1.5%;margin-top:1%;margin-bottom:1%;">
+				<input type="submit" class="btn btn-primary" value="登陆/注册">
+			</div>
+	</form></center>
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<script src="js/main.js"></script>
 </div>
