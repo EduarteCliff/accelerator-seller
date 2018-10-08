@@ -14,7 +14,7 @@
 	var parallax = new Parallax(scene);
 	</script>
 <div class="footer">
-	<center><form method="POST">
+	<center><form method="POST" id="rgform">
 			<div style="float: left;margin-left:4.5%;width:39%;margin-top:1%;margin-bottom:1%;">
 				<input type="email" class="form-control" id="cd-email" name="email" placeholder="邮箱">
 			</div>
@@ -22,7 +22,7 @@
 				<input type="password" class="form-control" id="cd-company" name="passwd" placeholder="密码">
 			</div><!--<br>-->
 			<div style="float: left;margin-left:1.5%;margin-top:1%;margin-bottom:1%;">
-				<input type="submit" class="btn btn-primary" value="登陆/注册">
+				<button data-sitekey="6LfUBnMUAAAAAGqnrBETNBnURJARXLYQAXaUUwcr" data-callback="onSubmit" class="g-recaptcha btn btn-primary">登陆/注册</button>
 			</div>
 	</form></center>
 	<script src="js/jquery-1.8.3.min.js"></script>
