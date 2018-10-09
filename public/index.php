@@ -9,13 +9,13 @@
 		include "./config/config.php";
 		define('MAIL_HOST','smtp.gmail.com');
 		//SMTP服务器
-		define('MAIL_NICK',"eduartecliff@gmail.com");
+		define('MAIL_NICK',"xxxx@gmail.com");
 		//发件人
-		define('MAIL_USER',"eduartecliff@gmail.com");
+		define('MAIL_USER',"xxxx@gmail.com");
 		//发件人账号
-		define('MAIL_PASS',"907382289Zcy");
+		define('MAIL_PASS',"xxxx");
 		//发件密码
-		define('MAIL_FROM',"eduartecliff@gmail.com");
+		define('MAIL_FROM',"xxxx@gmail.com");
 		//发件人邮箱
 		$user=$_POST["email"];
 		$passwd=$_POST["passwd"];
