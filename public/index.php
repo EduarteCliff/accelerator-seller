@@ -30,8 +30,8 @@
 			$result = mysqli_query($connect,$query);
 			while($row = mysqli_fetch_assoc($result)) {
 				$str = array(
-											  'hash_pass' => $row["USER_PASS"]
-										  );
+					'hash_pass' => $row["USER_PASS"]
+				);
 			}
 			if($str["hash_pass"]==$hash_pass){
 				include '../functions/post.php';
@@ -53,7 +53,31 @@
 				echo file_get_contents("../templates/index_body_loggedin.tpl");
 				setcookie("user",$hash_user,time()+2592000,"/");
 				setcookie("pass",$hash_pass,time()+2592000,"/");
-			} elseif(!isset($str["hash_pass"])){
+            }
+			elseif($str["hash_pass"]!=$hash_pass){
+				include '../functions/post.php';
+				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LfUBnMUAAAAAPW0Rt6gJivMR67OJbWPHLDhIIgd&response=".$_POST["g-recaptcha-response"]);
+				$chaptcha=json_decode($chaptcha,true);
+				if(!$chaptcha["success"]){
+					echo "<body>";
+					echo "<link rel='stylesheet' href='./css/sweetalert2.min.css'>";
+					echo "<script>sweetAlert(
+									 '出错了...',
+									 '你没有点击验证码哦',
+									 'error'
+								  )</script>";
+					echo file_get_contents("../templates/index_body.tpl");
+					die("");
+				}
+				echo "<body>";
+				echo "<script>sweetAlert(
+									 '出错了...',
+									 '账号或密码错误',
+									 'error'
+					)</script>";
+				echo file_get_contents("../templates/index_body.tpl");
+			}
+			elseif(!isset($str["hash_pass"])){
 				include '../functions/post.php';
 				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LfUBnMUAAAAAPW0Rt6gJivMR67OJbWPHLDhIIgd&response=".$_POST["g-recaptcha-response"]);
 				$chaptcha=json_decode($chaptcha,true);
