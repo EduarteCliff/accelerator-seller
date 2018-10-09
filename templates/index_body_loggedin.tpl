@@ -3,7 +3,7 @@
     	<div id="container">
 		<div id="scene">
 			<div data-depth="0.07"><img src="./assets/images/layer1.jpg"></div>
-			<div data-depth="0.05"><img src="./assets/images/layer2.png"></div>
+			<div data-depth="0.05" style="margin-top:1.7%;"><img src="./assets/images/layer2.png"></div>
 		</div>
 	</div>
 	</div>
