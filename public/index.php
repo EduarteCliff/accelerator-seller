@@ -1,4 +1,11 @@
 <?php
+/**
+	x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~x
+	+ copyright ©2018 oxdl.cn AllRights reserved +
+	+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+	+ github.com/EduarteCliff/accelerator-seller +
+	x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~x
+*/
 	if(isset($_POST["username"])) die("");
 	if(isset($_GET["submit"])) header('location:/');
 	include "../functions/ismobile.php";
