@@ -1,3 +1,11 @@
+<!--
+	x--------------------------------------------x
+	+ copyright ©2018 oxdl.cn AllRights reserved +
+	+--------------------------------------------+
+	+ github.com/EduarteCliff/accelerator-seller +
+	x--------------------------------------------x
+	
+-->
 <!doctype html>
 <html lang="ZH_CN">
 <head>
