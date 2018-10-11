@@ -1,3 +1,7 @@
+	<div id="text" style="position:absolute;z-index:1;margin-top:50%;margin-bottom:5%;margin-left:3%;">
+		<h1 style="color:white;">尊敬的会员</h1>
+		<h2 style="color:white;">欢迎回来</h2>
+	</div>
 	<div class="outer-container">
     	<div class="inner-container">
     	<div id="container">
