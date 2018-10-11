@@ -1,4 +1,8 @@
-	<div class="outer-container">
+<div id="text" style="position:absolute;z-index:1;margin-top:50%;margin-bottom:5%;margin-left:3%;">
+	<h1 style="color:white;">使用GreenHat&trade;游戏加速器</h1>
+	<h2 style="color:white;">优化您的游戏体验</h2>
+</div>
+<div class="outer-container" style="position:absolute;z-index:0;">
     	<div class="inner-container">
     	<div id="container">
 		<div id="scene">
@@ -20,7 +24,7 @@
 			</div>
 			<div style="float: left;margin-left:1.5%;width:39%;margin-top:1%;margin-bottom:1%;">
 				<input type="password" class="form-control" id="cd-company" name="passwd" placeholder="密码">
-			</div><!--<br>-->
+			</div>
 			<div style="float: left;margin-left:1.5%;margin-top:1%;margin-bottom:1%;">
 				<button data-sitekey="6LfUBnMUAAAAAGqnrBETNBnURJARXLYQAXaUUwcr" data-callback="onSubmit" class="g-recaptcha btn btn-primary">登陆/注册</button>
 			</div>
@@ -28,6 +32,5 @@
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<script src="js/main.js"></script>
 </div>
-
 </body>
 </html>
