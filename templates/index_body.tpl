@@ -1,6 +1,6 @@
-	<div id="text" style="position:absolute;z-index:1;margin-top:50%;margin-bottom:5%;margin-left:3%;">
-		<h1 style="color:white;">使用GreenHat&trade;游戏加速器</h1>
-		<h2 style="color:white;">优化您的游戏体验</h2>
+	<div id="text" style="position:absolute;z-index:1;margin-top:73vh;margin-left:2%;">
+		<div style="color:white;font-size:6vh;">使用GreenHat&trade;游戏加速器</div>
+		<div style="color:white;font-size:4vh;">优化您的游戏体验</div>
 	</div>
 <div class="outer-container" style="position:absolute;z-index:0;">
     	<div class="inner-container">
