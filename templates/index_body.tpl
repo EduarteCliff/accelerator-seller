@@ -1,8 +1,8 @@
-	<div id="text" style="position:absolute;z-index:1;margin-top:67vh;margin-left:2%;">
+<div id="text" style="position:absolute;z-index:1;margin-top:67vh;margin-left:2%;">
 		<div style="color:white;font-size:6vh;">使用GreenHat&trade;游戏加速器</div>
 		<div style="color:white;font-size:4vh;">优化您的游戏体验</div>
 	</div>
-<div class="outer-container" style="position:absolute;z-index:0;">
+<div class="outer-container" style="position:absolute;z-index:0;margin-top:-18vh;">
     	<div class="inner-container">
     	<div id="container">
 		<div id="scene">
