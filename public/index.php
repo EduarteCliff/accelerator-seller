@@ -6,7 +6,8 @@
 	+ github.com/EduarteCliff/accelerator-seller +
 	x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~x
 */
-	if(isset($_POST["username"])) die("");
+	if(isset($_POST["username"]))
+    		if($_POST["username"]!="") die("");
 	if(isset($_GET["submit"])) header('location:/');
 	include "../functions/ismobile.php";
 	if(isMobile()) die("<body>暂不支持手机浏览器<br>实在太忙了没时间做<br>如果你可以帮忙开发手机前端，可以联系qq207083702</body></html>");
