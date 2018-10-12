@@ -25,10 +25,12 @@
 		//发件密码
 		define('MAIL_FROM',"xxxx@gmail.com");
 		//发件人邮箱
-		$user=$_POST["email"];
-		$passwd=$_POST["passwd"];
-		$hash_pass=md5($passwd);
-		$hash_user=md5($user);
+		if(isset($_POST["email"])){
+			$user=$_POST["email"];
+			$passwd=$_POST["passwd"];
+			$hash_pass=md5($passwd);
+			$hash_user=md5($user);
+		}
 		if(isset($user)){
 			$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS) or die('数据库连接失败，错误信息：'.mysqli_error($connect));
 			//数据库连接
