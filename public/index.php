@@ -65,29 +65,6 @@
 				setcookie("user",$hash_user,time()+2592000,"/");
 				setcookie("pass",$hash_pass,time()+2592000,"/");
             }
-			elseif($str["hash_pass"]!=$hash_pass){
-				include '../functions/post.php';
-				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LfUBnMUAAAAAPW0Rt6gJivMR67OJbWPHLDhIIgd&response=".$_POST["g-recaptcha-response"]);
-				$chaptcha=json_decode($chaptcha,true);
-				if(!$chaptcha["success"]){
-					echo "<body>";
-					echo "<link rel='stylesheet' href='./css/sweetalert2.min.css'>";
-					echo "<script>sweetAlert(
-									 '出错了...',
-									 '你没有点击验证码哦',
-									 'error'
-								  )</script>";
-					echo file_get_contents("../templates/index_body.tpl");
-					die("");
-				}
-				echo "<body>";
-				echo "<script>sweetAlert(
-									 '出错了...',
-									 '账号或密码错误',
-									 'error'
-					)</script>";
-				echo file_get_contents("../templates/index_body.tpl");
-			}
 			elseif(!isset($str["hash_pass"])){
 				include '../functions/post.php';
 				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LfUBnMUAAAAAPW0Rt6gJivMR67OJbWPHLDhIIgd&response=".$_POST["g-recaptcha-response"]);
@@ -136,6 +113,29 @@
 				mysqli_select_db($connect,DB_NAME) or die('数据库连接错误，错误信息：'.mysqli_error($connect));
 				//选择库
 				mysqli_query($connect,$query);
+			}
+			elseif($str["hash_pass"]!=$hash_pass){
+				include '../functions/post.php';
+				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LfUBnMUAAAAAPW0Rt6gJivMR67OJbWPHLDhIIgd&response=".$_POST["g-recaptcha-response"]);
+				$chaptcha=json_decode($chaptcha,true);
+				if(!$chaptcha["success"]){
+					echo "<body>";
+					echo "<link rel='stylesheet' href='./css/sweetalert2.min.css'>";
+					echo "<script>sweetAlert(
+									 '出错了...',
+									 '你没有点击验证码哦',
+									 'error'
+								  )</script>";
+					echo file_get_contents("../templates/index_body.tpl");
+					die("");
+				}
+				echo "<body>";
+				echo "<script>sweetAlert(
+									 '出错了...',
+									 '账号或密码错误',
+									 'error'
+					)</script>";
+				echo file_get_contents("../templates/index_body.tpl");
 			}
 		}
 		elseif(isset($_COOKIE["user"])){
