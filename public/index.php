@@ -1,4 +1,13 @@
 <?php
+/*
+	x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~x
+	+ copyright ©2018 oxdl.cn AllRights reserved +
+	+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+	+ github.com/EduarteCliff/accelerator-seller +
+	x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~x
+*/
+	if(isset($_POST["username"]))
+    		if($_POST["username"]!="") die("");
 	if(isset($_GET["submit"])) header('location:/');
 	include "../functions/ismobile.php";
 	if(isMobile()) die("<body>暂不支持手机浏览器<br>实在太忙了没时间做<br>如果你可以帮忙开发手机前端，可以联系qq207083702</body></html>");
@@ -9,18 +18,20 @@
 		include "./config/config.php";
 		define('MAIL_HOST','smtp.gmail.com');
 		//SMTP服务器
-		define('MAIL_NICK',"eduartecliff@gmail.com");
+		define('MAIL_NICK',"xxxx@gmail.com");
 		//发件人
-		define('MAIL_USER',"eduartecliff@gmail.com");
+		define('MAIL_USER',"xxxx@gmail.com");
 		//发件人账号
-		define('MAIL_PASS',"907382289Zcy");
+		define('MAIL_PASS',"xxxx");
 		//发件密码
-		define('MAIL_FROM',"eduartecliff@gmail.com");
+		define('MAIL_FROM',"xxxx@gmail.com");
 		//发件人邮箱
-		$user=$_POST["email"];
-		$passwd=$_POST["passwd"];
-		$hash_pass=md5($passwd);
-		$hash_user=md5($user);
+		if(isset($_POST["email"])){
+			$user=$_POST["email"];
+			$passwd=$_POST["passwd"];
+			$hash_pass=md5($passwd);
+			$hash_user=md5($user);
+		}
 		if(isset($user)){
 			$connect = mysqli_connect(DB_HOST,DB_USER,DB_PASS) or die('数据库连接失败，错误信息：'.mysqli_error($connect));
 			//数据库连接
@@ -30,12 +41,12 @@
 			$result = mysqli_query($connect,$query);
 			while($row = mysqli_fetch_assoc($result)) {
 				$str = array(
-											  'hash_pass' => $row["USER_PASS"]
-										  );
+					'hash_pass' => $row["USER_PASS"]
+				);
 			}
 			if($str["hash_pass"]==$hash_pass){
 				include '../functions/post.php';
-				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LeK-3IUAAAAABRzTjaawbvdZVdcbBSKzZthftES&response=".$_POST["g-recaptcha-response"]);
+				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LfUBnMUAAAAAPW0Rt6gJivMR67OJbWPHLDhIIgd&response=".$_POST["g-recaptcha-response"]);
 				$chaptcha=json_decode($chaptcha,true);
 				if(!$chaptcha["success"]){
 					echo "<body>";
@@ -53,9 +64,10 @@
 				echo file_get_contents("../templates/index_body_loggedin.tpl");
 				setcookie("user",$hash_user,time()+2592000,"/");
 				setcookie("pass",$hash_pass,time()+2592000,"/");
-			} elseif(!isset($str["hash_pass"])){
+            }
+			elseif(!isset($str["hash_pass"])){
 				include '../functions/post.php';
-				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LeK-3IUAAAAABRzTjaawbvdZVdcbBSKzZthftES&response=".$_POST["g-recaptcha-response"]);
+				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LfUBnMUAAAAAPW0Rt6gJivMR67OJbWPHLDhIIgd&response=".$_POST["g-recaptcha-response"]);
 				$chaptcha=json_decode($chaptcha,true);
 				if(!$chaptcha["success"]){
 					echo "<body>";
@@ -101,6 +113,29 @@
 				mysqli_select_db($connect,DB_NAME) or die('数据库连接错误，错误信息：'.mysqli_error($connect));
 				//选择库
 				mysqli_query($connect,$query);
+			}
+			elseif($str["hash_pass"]!=$hash_pass){
+				include '../functions/post.php';
+				$chaptcha=post("https://www.google.com/recaptcha/api/siteverify","secret=6LfUBnMUAAAAAPW0Rt6gJivMR67OJbWPHLDhIIgd&response=".$_POST["g-recaptcha-response"]);
+				$chaptcha=json_decode($chaptcha,true);
+				if(!$chaptcha["success"]){
+					echo "<body>";
+					echo "<link rel='stylesheet' href='./css/sweetalert2.min.css'>";
+					echo "<script>sweetAlert(
+									 '出错了...',
+									 '你没有点击验证码哦',
+									 'error'
+								  )</script>";
+					echo file_get_contents("../templates/index_body.tpl");
+					die("");
+				}
+				echo "<body>";
+				echo "<script>sweetAlert(
+									 '出错了...',
+									 '账号或密码错误',
+									 'error'
+					)</script>";
+				echo file_get_contents("../templates/index_body.tpl");
 			}
 		}
 		elseif(isset($_COOKIE["user"])){

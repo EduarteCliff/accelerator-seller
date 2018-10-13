@@ -1,5 +1,13 @@
 <!doctype html>
 <html lang="ZH_CN">
+<!--
+	x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~x
+	+ copyright ©2018 oxdl.cn AllRights reserved +
+	+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+	+ github.com/EduarteCliff/accelerator-seller +
+	x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~x
+	
+-->
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.21.1/sweetalert2.all.min.js"></script>
     <meta charset="utf-8">

@@ -1,9 +1,13 @@
+	<div id="text" style="position:absolute;z-index:1;margin-top:50%;margin-bottom:5%;margin-left:3%;">
+		<h1 style="color:white;">尊敬的会员</h1>
+		<h2 style="color:white;">欢迎回来</h2>
+	</div>
 	<div class="outer-container">
     	<div class="inner-container">
     	<div id="container">
 		<div id="scene">
 			<div data-depth="0.07"><img src="./assets/images/layer1.jpg"></div>
-			<div data-depth="0.05"><img src="./assets/images/layer2.png"></div>
+			<div data-depth="0.05" style="margin-top:1.7%;"><img src="./assets/images/layer2.png"></div>
 		</div>
 	</div>
 	</div>
@@ -14,9 +18,9 @@
 	var parallax = new Parallax(scene);
 	</script>
 <div class="footer">
-	<form method="POST" action="/clientarea" class="cd-form floating-labels">
-	<input type="submit" class="btn btn-default" value="进入客户中心" style="display:inline; margin-top: 12px; margin-bottom:-5px;margin-left= -40px">
-	</form>
+  	<div style="float:right;margin-right:2%;margin-top:1%;margin-bottom:1%;">
+		<a href="/clientarea" class="btn btn-primary">进入客户中心</a>
+   	</div>
 </div>
 
 </body>
